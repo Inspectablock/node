@@ -29,5 +29,7 @@ ADD --chown=$USER_UID:$USER_GID --chmod=700 https://binaries.hyperliquid.xyz/Tes
 # gossip ports
 EXPOSE 9000
 EXPOSE 8000
+# EVM RPC port
+EXPOSE 3001
 
-ENTRYPOINT $HOME/hl-visor
+ENTRYPOINT $HOME/hl-visor run-non-validator --evm

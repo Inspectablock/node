@@ -7,16 +7,17 @@ services:
     ports:
       - "8000:8000"
       - "9000:9000"
+      - "3001:3001"
     volumes:
-      - hl-data:/home/hluser/hl/data
+      - ./hl-data:/home/hluser/hl/data
 
   pruner:
     restart: unless-stopped
     build: ./pruner
     volumes:
-      - hl-data:/home/hluser/hl/data
+      - ./hl-data:/home/hluser/hl/data
 
 
-volumes:
-  hl-data:
-    driver: local
+# volumes:
+#   hl-data:
+#     driver: local
